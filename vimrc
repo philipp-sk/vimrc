@@ -46,3 +46,15 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+" ====Tabs===
+" Ctrl-Left: move to the previous tab
+nnoremap <C-Left> :tabprevious<CR>
+" Ctrl-Right: move to the next tab
+nnoremap <C-Right> :tabnext<CR>
+" Alt-Left: move current tab to the left
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" Alt-Left: move current tab to the right
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>set
+" Ctrl-n: Open a new tab and list the current directory
+nnoremap <C-n> :Te<CR>
